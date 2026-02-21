@@ -1,0 +1,222 @@
+{
+  "generatedAt": "2026-02-21T03:44:48.884Z",
+  "totalDocuments": 24,
+  "pages": [
+    {
+      "title": "DNS Cache Poisoning",
+      "path": "dns-security/cache-poisoning",
+      "file": "dns-security/cache-poisoning.md",
+      "wordCount": 1493,
+      "lastModified": "2026-02-21",
+      "excerpt": "DNS cache poisoning is the insertion of fraudulent records into a recursive resolver's cache. Once poisoned, the resolver serves the attacker's data to all clients using it until the TTL expires, w...",
+      "isIndex": false
+    },
+    {
+      "title": "DNS Amplification Attacks",
+      "path": "dns-security/dns-amplification",
+      "file": "dns-security/dns-amplification.md",
+      "wordCount": 1390,
+      "lastModified": "2026-02-21",
+      "excerpt": "DNS amplification is a volumetric DDoS technique that exploits open DNS resolvers to reflect and amplify traffic toward a victim. The attacker sends small queries with a spoofed source IP (the vict...",
+      "isIndex": false
+    },
+    {
+      "title": "DNS Spoofing and Hijacking",
+      "path": "dns-security/dns-spoofing",
+      "file": "dns-security/dns-spoofing.md",
+      "wordCount": 1477,
+      "lastModified": "2026-02-21",
+      "excerpt": "DNS spoofing is the injection of fraudulent DNS data into a resolver's cache or a client's resolution path, redirecting users to attacker-controlled infrastructure. The terms spoofing and hijacking...",
+      "isIndex": false
+    },
+    {
+      "title": "DNS-Based Blacklists (DNSBL)",
+      "path": "dns-security/dnsbl",
+      "file": "dns-security/dnsbl.md",
+      "wordCount": 1297,
+      "lastModified": "2026-02-21",
+      "excerpt": "A DNSBL (DNS-Based Blacklist, also called DNS Blocklist or RBL — Real-time Blacklist) is a list of IP addresses or domain names published via DNS. Clients query the DNSBL using a DNS lookup; the pr...",
+      "isIndex": false
+    },
+    {
+      "title": "DNSSEC Explained",
+      "path": "dns-security/dnssec-explained",
+      "file": "dns-security/dnssec-explained.md",
+      "wordCount": 1364,
+      "lastModified": "2026-02-21",
+      "excerpt": "DNSSEC (Domain Name System Security Extensions) adds cryptographic authentication to DNS. It does not encrypt DNS traffic — it provides data origin authentication and data integrity verification, a...",
+      "isIndex": false
+    },
+    {
+      "title": "The DNS Hierarchy",
+      "path": "fundamentals/dns-hierarchy",
+      "file": "fundamentals/dns-hierarchy.md",
+      "wordCount": 1533,
+      "lastModified": "2026-02-21",
+      "excerpt": "DNS names exist within a hierarchical tree rooted at a single unnamed node — the DNS root, conventionally written as a single dot (`.`). Every domain name in the global namespace is a path from som...",
+      "isIndex": false
+    },
+    {
+      "title": "How DNS Resolution Works",
+      "path": "fundamentals/how-dns-resolution-works",
+      "file": "fundamentals/how-dns-resolution-works.md",
+      "wordCount": 1480,
+      "lastModified": "2026-02-21",
+      "excerpt": "DNS resolution is the process of converting a domain name into a resource record — most commonly an IP address. The process involves up to four distinct actors: the stub resolver, the recursive res...",
+      "isIndex": false
+    },
+    {
+      "title": "Recursive vs Authoritative DNS Servers",
+      "path": "fundamentals/recursive-vs-authoritative",
+      "file": "fundamentals/recursive-vs-authoritative.md",
+      "wordCount": 1350,
+      "lastModified": "2026-02-21",
+      "excerpt": "DNS servers perform one of two fundamentally different functions — and the distinction is not merely operational but architectural. Conflating these roles is a common source of confusion when diagn...",
+      "isIndex": false
+    },
+    {
+      "title": "DNS Root Servers",
+      "path": "fundamentals/root-servers",
+      "file": "fundamentals/root-servers.md",
+      "wordCount": 1308,
+      "lastModified": "2026-02-21",
+      "excerpt": "The DNS root zone is the top of the global DNS hierarchy. Every name resolution that cannot be answered from cache must ultimately trace back to the root — it is the entry point for discovering whi...",
+      "isIndex": false
+    },
+    {
+      "title": "What Is DNS",
+      "path": "fundamentals/what-is-dns",
+      "file": "fundamentals/what-is-dns.md",
+      "wordCount": 1195,
+      "lastModified": "2026-02-21",
+      "excerpt": "The Domain Name System (DNS) is a hierarchical, distributed database that maps human-readable names to network resources — most commonly IP addresses. It serves as the naming infrastructure for the...",
+      "isIndex": false
+    },
+    {
+      "title": "DNS Reference Library — Index",
+      "path": "INDEX",
+      "file": "INDEX.md",
+      "wordCount": 1010,
+      "lastModified": "2026-02-21",
+      "excerpt": "Generated: 2026-02-21T03:44:45.116Z",
+      "isIndex": true
+    },
+    {
+      "title": "A Record",
+      "path": "record-types/a-record",
+      "file": "record-types/a-record.md",
+      "wordCount": 1012,
+      "lastModified": "2026-02-21",
+      "excerpt": "The A record (Address record) maps a fully qualified domain name (FQDN) to a single IPv4 address. It is the most queried record type in the DNS system and is fundamental to name resolution on the i...",
+      "isIndex": false
+    },
+    {
+      "title": "AAAA Record",
+      "path": "record-types/aaaa-record",
+      "file": "record-types/aaaa-record.md",
+      "wordCount": 1011,
+      "lastModified": "2026-02-21",
+      "excerpt": "The AAAA record (quad-A record) maps a fully qualified domain name to a single IPv6 address. It is the IPv6 counterpart to the A record. The name \"AAAA\" reflects that an IPv6 address is four times ...",
+      "isIndex": false
+    },
+    {
+      "title": "CNAME Record",
+      "path": "record-types/cname-record",
+      "file": "record-types/cname-record.md",
+      "wordCount": 1153,
+      "lastModified": "2026-02-21",
+      "excerpt": "The CNAME record (Canonical Name record) creates an alias from one domain name to another. The target of a CNAME is called the canonical name, and it is what the resolver ultimately resolves to fin...",
+      "isIndex": false
+    },
+    {
+      "title": "MX Record",
+      "path": "record-types/mx-record",
+      "file": "record-types/mx-record.md",
+      "wordCount": 1338,
+      "lastModified": "2026-02-21",
+      "excerpt": "The MX record (Mail Exchange record) specifies the mail server(s) responsible for accepting email on behalf of a domain. When a sending mail server (MTA) needs to deliver email to `user@example.com...",
+      "isIndex": false
+    },
+    {
+      "title": "NS Record",
+      "path": "record-types/ns-record",
+      "file": "record-types/ns-record.md",
+      "wordCount": 1376,
+      "lastModified": "2026-02-21",
+      "excerpt": "The NS record (Name Server record) identifies the authoritative nameservers for a DNS zone. Every zone must have at least two NS records at its apex for redundancy. NS records serve two distinct ro...",
+      "isIndex": false
+    },
+    {
+      "title": "TXT Record",
+      "path": "record-types/txt-record",
+      "file": "record-types/txt-record.md",
+      "wordCount": 1315,
+      "lastModified": "2026-02-21",
+      "excerpt": "The TXT record (Text record) stores arbitrary human-readable or machine-readable text associated with a domain name. Originally defined in RFC 1035 for administrative information, TXT records have ...",
+      "isIndex": false
+    },
+    {
+      "title": "Becoming an ICANN-Accredited Registrar",
+      "path": "tlds/becoming-a-registrar",
+      "file": "tlds/becoming-a-registrar.md",
+      "wordCount": 1102,
+      "lastModified": "2026-02-21",
+      "excerpt": "To sell domain names directly to registrants under gTLDs, a company must obtain ICANN accreditation and enter into a Registrar Accreditation Agreement (RAA) with ICANN. Without accreditation, a com...",
+      "isIndex": false
+    },
+    {
+      "title": "ccTLD vs gTLD: Country-Code and Generic Top-Level Domains",
+      "path": "tlds/cctld-vs-gtld",
+      "file": "tlds/cctld-vs-gtld.md",
+      "wordCount": 1058,
+      "lastModified": "2026-02-21",
+      "excerpt": "Every TLD in the root zone falls into one of two primary categories: country-code TLDs (ccTLDs) and generic TLDs (gTLDs). The distinction is structural, not commercial — it determines how the TLD w...",
+      "isIndex": false
+    },
+    {
+      "title": "IANA Root Zone Database",
+      "path": "tlds/iana-root-database",
+      "file": "tlds/iana-root-database.md",
+      "wordCount": 1165,
+      "lastModified": "2026-02-21",
+      "excerpt": "The IANA Root Zone Database is the authoritative registry of all top-level domains. It is maintained by the Internet Assigned Numbers Authority (IANA), a function operated by ICANN under contract w...",
+      "isIndex": false
+    },
+    {
+      "title": "Registry vs Registrar: Roles in the Domain Name System",
+      "path": "tlds/registry-vs-registrar",
+      "file": "tlds/registry-vs-registrar.md",
+      "wordCount": 1067,
+      "lastModified": "2026-02-21",
+      "excerpt": "Domain name distribution operates through a structured three-party model defined by ICANN:",
+      "isIndex": false
+    },
+    {
+      "title": "What Is a Top-Level Domain (TLD)?",
+      "path": "tlds/what-is-a-tld",
+      "file": "tlds/what-is-a-tld.md",
+      "wordCount": 878,
+      "lastModified": "2026-02-21",
+      "excerpt": "A top-level domain (TLD) is the rightmost label in a fully qualified domain name (FQDN). In the name `www.example.com.`, the TLD is `com`. The trailing dot represents the DNS root, and `com` is the...",
+      "isIndex": false
+    },
+    {
+      "title": "DNS Propagation Issues",
+      "path": "troubleshooting/dns-propagation-issues",
+      "file": "troubleshooting/dns-propagation-issues.md",
+      "wordCount": 1064,
+      "lastModified": "2026-02-21",
+      "excerpt": "\"Propagation\" is an informal term for the delay between making a DNS change and that change being visible to all resolvers on the internet. The DNS system does not push changes — resolvers cache re...",
+      "isIndex": false
+    },
+    {
+      "title": "SERVFAIL: Server Failure Response Code",
+      "path": "troubleshooting/servfail",
+      "file": "troubleshooting/servfail.md",
+      "wordCount": 1025,
+      "lastModified": "2026-02-21",
+      "excerpt": "SERVFAIL is DNS response code 2 (RCODE 2). When a resolver returns SERVFAIL, it is reporting that it was unable to complete the query — it could not obtain a valid answer from the authoritative ser...",
+      "isIndex": false
+    }
+  ]
+}

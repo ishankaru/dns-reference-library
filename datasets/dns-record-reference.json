@@ -1,0 +1,232 @@
+[
+  {
+    "type": "A",
+    "value": 1,
+    "rfc": "RFC 1035",
+    "description": "Maps a hostname to a 32-bit IPv4 address. The most fundamental DNS record type; the primary mechanism by which domain names resolve to IPv4 addresses.",
+    "category": "address",
+    "common": true,
+    "example": "example.com. 300 IN A 93.184.216.34",
+    "notes": "A single hostname may have multiple A records (round-robin load balancing). TTL governs how long resolvers cache the response. Deprecated in favour of AAAA for IPv6-only hosts."
+  },
+  {
+    "type": "AAAA",
+    "value": 28,
+    "rfc": "RFC 3596",
+    "description": "Maps a hostname to a 128-bit IPv6 address. The IPv6 equivalent of the A record; the name 'AAAA' reflects that an IPv6 address is four times the size of an IPv4 address.",
+    "category": "address",
+    "common": true,
+    "example": "example.com. 300 IN AAAA 2606:2800:220:1:248:1893:25c8:1946",
+    "notes": "Clients that support IPv6 query for both A and AAAA records simultaneously. RFC 6555 (Happy Eyeballs) defines how clients race IPv4 and IPv6 connections."
+  },
+  {
+    "type": "CNAME",
+    "value": 5,
+    "rfc": "RFC 1035",
+    "description": "Canonical Name record. Creates an alias from one domain name to another. The DNS resolver follows the chain until it reaches an A or AAAA record. A CNAME must not coexist with other record types at the same name.",
+    "category": "alias",
+    "common": true,
+    "example": "www.example.com. 300 IN CNAME example.com.",
+    "notes": "CNAME chains are legal but discouraged for performance reasons. A CNAME at the zone apex (root of a domain) is not permitted by RFC 1034; CDN providers work around this with proprietary CNAME-flattening or ALIAS records."
+  },
+  {
+    "type": "MX",
+    "value": 15,
+    "rfc": "RFC 1035",
+    "description": "Mail Exchanger record. Specifies the mail server responsible for accepting email for a domain. Contains a priority (preference) value and a hostname. Lower priority numbers indicate higher preference.",
+    "category": "mail",
+    "common": true,
+    "example": "example.com. 300 IN MX 10 mail.example.com.",
+    "notes": "Multiple MX records with different priorities enable primary/fallback mail routing. The target must be an A or AAAA record, not a CNAME. SPF, DKIM, and DMARC TXT records work in conjunction with MX for email authentication."
+  },
+  {
+    "type": "TXT",
+    "value": 16,
+    "rfc": "RFC 1035, RFC 1464",
+    "description": "Text record. Holds arbitrary human-readable or machine-readable text strings. Widely used for domain ownership verification, email authentication (SPF, DKIM, DMARC), and service configuration.",
+    "category": "text",
+    "common": true,
+    "example": "example.com. 300 IN TXT \"v=spf1 include:_spf.google.com ~all\"",
+    "notes": "A single TXT record can contain multiple strings up to 255 bytes each; implementations typically concatenate them. Multiple TXT records at the same name are valid. DKIM records are published at selector._domainkey.example.com."
+  },
+  {
+    "type": "NS",
+    "value": 2,
+    "rfc": "RFC 1035",
+    "description": "Name Server record. Delegates a DNS zone to the listed authoritative name servers. NS records at the zone apex are mandatory; NS records for child zones (delegation NS) appear in the parent zone.",
+    "category": "delegation",
+    "common": true,
+    "example": "example.com. 86400 IN NS ns1.example.com.",
+    "notes": "A zone must have at least two NS records for redundancy. Glue records (A/AAAA for in-bailiwick name servers) must be included in the parent zone to avoid circular dependencies."
+  },
+  {
+    "type": "SOA",
+    "value": 6,
+    "rfc": "RFC 1035",
+    "description": "Start of Authority record. Mandatory at the apex of every DNS zone. Contains the primary name server, responsible party email address, and zone timing parameters: serial, refresh, retry, expire, and minimum TTL.",
+    "category": "zone",
+    "common": true,
+    "example": "example.com. 3600 IN SOA ns1.example.com. hostmaster.example.com. 2024011501 7200 3600 1209600 300",
+    "notes": "SOA serial is conventionally formatted as YYYYMMDDNN (date + 2-digit increment). The minimum TTL field (last number) is used as the TTL for negative responses (NXDOMAIN/NODATA) per RFC 2308."
+  },
+  {
+    "type": "PTR",
+    "value": 12,
+    "rfc": "RFC 1035",
+    "description": "Pointer record. Maps an IP address to a hostname (reverse DNS). IPv4 addresses use in-addr.arpa; IPv6 addresses use ip6.arpa. Used for logging, spam filtering, and FCrDNS (forward-confirmed reverse DNS) checks.",
+    "category": "reverse",
+    "common": true,
+    "example": "34.216.184.93.in-addr.arpa. 300 IN PTR example.com.",
+    "notes": "PTR zones for public IP addresses are managed by the IP block holder (ISP or organisation), not the domain owner. IPv6 PTR records use nibble-reversed notation under ip6.arpa."
+  },
+  {
+    "type": "SRV",
+    "value": 33,
+    "rfc": "RFC 2782",
+    "description": "Service record. Specifies the location (hostname and port) of servers for a specific service and protocol. Enables service discovery without hardcoded server addresses. Format: priority, weight, port, target.",
+    "category": "service",
+    "common": true,
+    "example": "_sip._tcp.example.com. 300 IN SRV 10 60 5060 sip.example.com.",
+    "notes": "Name format: _service._proto.name. Priority and weight work like MX: lower priority wins; weight is used for load distribution among equal-priority records. Used by SIP, XMPP, LDAP, Kerberos, and many other protocols."
+  },
+  {
+    "type": "CAA",
+    "value": 257,
+    "rfc": "RFC 8659",
+    "description": "Certification Authority Authorization record. Specifies which certificate authorities are permitted to issue TLS certificates for a domain. CAs must check CAA records before issuance; violation must be reported.",
+    "category": "security",
+    "common": true,
+    "example": "example.com. 300 IN CAA 0 issue \"letsencrypt.org\"",
+    "notes": "Tags: 'issue' (permit CA for DV/OV/EV), 'issuewild' (permit CA for wildcards), 'iodef' (violation report URL). An empty issue/issuewild value prohibits all CAs. CAA checking became mandatory for CAs in September 2017 per CA/Browser Forum Ballot 187."
+  },
+  {
+    "type": "NAPTR",
+    "value": 35,
+    "rfc": "RFC 3403",
+    "description": "Naming Authority Pointer record. Provides rules for rewriting URIs and domain names using regular expressions. Used in ENUM (telephone number to URI mapping) and SIP/VoIP service discovery.",
+    "category": "service",
+    "common": false,
+    "example": "example.com. 300 IN NAPTR 10 100 \"u\" \"E2U+sip\" \"!^.*$!sip:info@example.com!\" .",
+    "notes": "NAPTR records contain an order, preference, flags, service, regex, and replacement. ENUM uses NAPTR under e164.arpa to map E.164 telephone numbers to SIP URIs. Flags: 'u' (URI), 's' (SRV lookup), 'a' (A/AAAA lookup)."
+  },
+  {
+    "type": "DNSKEY",
+    "value": 48,
+    "rfc": "RFC 4034",
+    "description": "DNSSEC public key record. Holds the public key material used to verify RRSIG signatures in a zone. Every DNSSEC-signed zone has at least one Zone Signing Key (ZSK) and optionally a Key Signing Key (KSK) published as DNSKEY records.",
+    "category": "dnssec",
+    "common": false,
+    "example": "example.com. 86400 IN DNSKEY 257 3 13 <base64-public-key>",
+    "notes": "Flags: 257 = KSK (SEP bit + Zone Key), 256 = ZSK. Algorithm 13 = ECDSA P-256 with SHA-256 (most common modern choice). Algorithm 8 = RSA/SHA-256. The KSK public key is hashed to produce the DS record published in the parent zone."
+  },
+  {
+    "type": "DS",
+    "value": 43,
+    "rfc": "RFC 4034",
+    "description": "Delegation Signer record. Published in the parent zone to create a chain of trust to a child zone's DNSKEY. Contains a hash of the child zone's KSK DNSKEY record, linking the parent's DNSSEC signature to the child zone.",
+    "category": "dnssec",
+    "common": false,
+    "example": "example.com. 86400 IN DS 12345 13 2 <sha256-hash-of-ksk>",
+    "notes": "Fields: key tag, algorithm, digest type, digest. Digest type 2 = SHA-256 (mandatory to support per RFC 6840). DS records are submitted to the parent zone's registry via the registrar's EPP interface during DNSSEC delegation setup."
+  },
+  {
+    "type": "RRSIG",
+    "value": 46,
+    "rfc": "RFC 4034",
+    "description": "Resource Record Signature. Contains the DNSSEC cryptographic signature for a set of DNS records of a given type at a given name. Validators use RRSIG records alongside the zone's DNSKEY to verify record authenticity and integrity.",
+    "category": "dnssec",
+    "common": false,
+    "example": "example.com. 86400 IN RRSIG A 13 2 86400 20240201000000 20240115000000 12345 example.com. <base64-signature>",
+    "notes": "Each RRSET (set of records of the same type and name) has a corresponding RRSIG. Contains signature inception/expiration timestamps. ZSK signs all RRSETs; KSK signs the DNSKEY RRSET. Signatures must be refreshed before expiration."
+  },
+  {
+    "type": "NSEC",
+    "value": 47,
+    "rfc": "RFC 4034",
+    "description": "Next Secure record. Provides authenticated denial of existence in DNSSEC-signed zones. Points to the next existing name in the zone (in canonical order) and lists which record types exist at the current name.",
+    "category": "dnssec",
+    "common": false,
+    "example": "example.com. 86400 IN NSEC www.example.com. A NS SOA MX RRSIG NSEC DNSKEY",
+    "notes": "NSEC allows zone enumeration (zone walking) because it exposes all record names in order. Replaced by NSEC3 in most modern deployments for privacy. Required in DNSSEC to prove that a queried name or type does not exist."
+  },
+  {
+    "type": "NSEC3",
+    "value": 50,
+    "rfc": "RFC 5155",
+    "description": "Next Secure version 3. An alternative to NSEC that hashes owner names before publication, preventing zone enumeration (zone walking). Provides authenticated denial of existence while protecting the list of zone contents.",
+    "category": "dnssec",
+    "common": false,
+    "example": "2t7b4g4vsa5smi47k61mv5bv1a22bojr.example.com. 86400 IN NSEC3 1 0 10 aabbccdd <next-hashed-owner> A RRSIG",
+    "notes": "Hash algorithm is typically SHA-1 (algorithm 1). The iteration count and salt add computational cost to enumeration. High iteration counts are now discouraged (RFC 9276 recommends 0 iterations). NSEC3PARAM record specifies zone-wide NSEC3 parameters."
+  },
+  {
+    "type": "TLSA",
+    "value": 52,
+    "rfc": "RFC 6698",
+    "description": "TLS Authentication record. Part of DANE (DNS-Based Authentication of Named Entities). Associates a TLS certificate or public key with a domain name, enabling certificate pinning via DNSSEC without relying on the CA PKI hierarchy.",
+    "category": "security",
+    "common": false,
+    "example": "_443._tcp.example.com. 300 IN TLSA 3 1 1 <sha256-of-cert-public-key>",
+    "notes": "Name format: _port._proto.hostname. Certificate usage: 0=PKIX-TA, 1=PKIX-EE, 2=DANE-TA, 3=DANE-EE. Selector: 0=full cert, 1=public key. Matching type: 0=exact, 1=SHA-256, 2=SHA-512. Requires DNSSEC to be meaningful."
+  },
+  {
+    "type": "SSHFP",
+    "value": 44,
+    "rfc": "RFC 4255",
+    "description": "SSH Fingerprint record. Publishes the fingerprint of an SSH server's host key in DNS. SSH clients that support SSHFP validation can verify the host key against the DNS record instead of prompting the user to manually verify the fingerprint.",
+    "category": "security",
+    "common": false,
+    "example": "example.com. 300 IN SSHFP 3 2 <sha256-fingerprint-of-ecdsa-key>",
+    "notes": "Algorithm: 1=RSA, 2=DSA, 3=ECDSA, 4=Ed25519. Fingerprint type: 1=SHA-1, 2=SHA-256. Requires 'VerifyHostKeyDNS yes' in ssh_config. Only secure when the DNS response is DNSSEC-validated. Eliminates the trust-on-first-use (TOFU) problem for SSH."
+  },
+  {
+    "type": "HINFO",
+    "value": 13,
+    "rfc": "RFC 1035",
+    "description": "Host Information record. Originally intended to publish the CPU and operating system type of a host. Rarely used in modern deployments due to security concerns about information disclosure. Sometimes repurposed in RFC 8482 responses.",
+    "category": "informational",
+    "common": false,
+    "example": "example.com. 300 IN HINFO \"Intel Xeon\" \"Linux\"",
+    "notes": "RFC 8482 recommends returning a single HINFO record with 'RFC8482' in the CPU field as a response to ANY queries, indicating that the full ANY response is not available. Most security-conscious operators suppress HINFO records."
+  },
+  {
+    "type": "LOC",
+    "value": 29,
+    "rfc": "RFC 1876",
+    "description": "Location record. Encodes geographic coordinates (latitude, longitude, altitude) and size/precision data for a host or network. Intended for geolocation of Internet resources via DNS.",
+    "category": "informational",
+    "common": false,
+    "example": "example.com. 300 IN LOC 37 46 29.744 N 122 25 9.904 W 7.00m 1m 10000m 10m",
+    "notes": "Format: degrees minutes seconds N/S degrees minutes seconds E/W altitude size. Informational only; not widely adopted. No standardised client-side use case has driven adoption. Still supported by BIND and other authoritative servers."
+  },
+  {
+    "type": "HTTPS",
+    "value": 65,
+    "rfc": "RFC 9460",
+    "description": "HTTPS Service Binding record. Encodes service parameters for HTTPS connections, including supported application protocols (e.g., HTTP/3), IP address hints (ipv4hint, ipv6hint), and ESNI/ECH public keys. Enables clients to optimise connection setup.",
+    "category": "service",
+    "common": false,
+    "example": "example.com. 300 IN HTTPS 1 . alpn=\"h2,h3\" ipv4hint=93.184.216.34",
+    "notes": "Priority 0 is an alias form (AliasMode); priority 1+ is ServiceMode. Allows HTTPS-first lookup, eliminating the need for an HTTP-to-HTTPS redirect round trip. Cloudflare and major CDNs began publishing HTTPS records in 2021-2022."
+  },
+  {
+    "type": "SVCB",
+    "value": 64,
+    "rfc": "RFC 9460",
+    "description": "Service Binding record. The generic predecessor to the HTTPS record type. Encodes service endpoints and parameters for arbitrary services. HTTPS (type 65) is a specialisation of SVCB for the https and http URI schemes.",
+    "category": "service",
+    "common": false,
+    "example": "_8443._foo.example.com. 300 IN SVCB 1 svc.example.net alpn=\"bar\"",
+    "notes": "SVCB and HTTPS share the same wire format and parameter encoding. SVCB is intended as a generic mechanism for service discovery; HTTPS applies that mechanism specifically to HTTP services. Both support Encrypted Client Hello (ECH) parameter encoding."
+  },
+  {
+    "type": "SPF",
+    "value": 99,
+    "rfc": "RFC 4408 (obsoleted by RFC 7208)",
+    "description": "Sender Policy Framework record. Originally a dedicated record type for publishing email sender policy. Deprecated; SPF data is now published exclusively as TXT records per RFC 7208.",
+    "category": "mail",
+    "common": false,
+    "example": "example.com. 300 IN SPF \"v=spf1 include:_spf.google.com ~all\"",
+    "notes": "RFC 7208 (2014) obsoleted the SPF record type and mandates TXT records for SPF data. DNS software and email validators no longer query for type 99. Publishing a type 99 SPF record alongside a TXT SPF record is no longer recommended."
+  }
+]

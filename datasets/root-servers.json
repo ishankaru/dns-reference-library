@@ -1,0 +1,119 @@
+[
+  {
+    "letter": "a",
+    "hostname": "a.root-servers.net",
+    "operator": "Verisign, Inc.",
+    "ipv4": "198.41.0.4",
+    "ipv6": "2001:503:ba3e::2:30",
+    "locations": 6,
+    "notes": "One of the original root servers; operated by Verisign since the early DNS era"
+  },
+  {
+    "letter": "b",
+    "hostname": "b.root-servers.net",
+    "operator": "University of Southern California, Information Sciences Institute",
+    "ipv4": "199.9.14.201",
+    "ipv6": "2001:500:200::b",
+    "locations": 2,
+    "notes": "Operated by USC/ISI; one of the original 13 root name servers"
+  },
+  {
+    "letter": "c",
+    "hostname": "c.root-servers.net",
+    "operator": "Cogent Communications",
+    "ipv4": "192.33.4.12",
+    "ipv6": "2001:500:2::c",
+    "locations": 8,
+    "notes": "Operated by Cogent Communications; previously operated by PSINet"
+  },
+  {
+    "letter": "d",
+    "hostname": "d.root-servers.net",
+    "operator": "University of Maryland",
+    "ipv4": "199.7.91.13",
+    "ipv6": "2001:500:2d::d",
+    "locations": 2,
+    "notes": "Operated by the University of Maryland; one of the original academic root server operators"
+  },
+  {
+    "letter": "e",
+    "hostname": "e.root-servers.net",
+    "operator": "NASA Ames Research Center",
+    "ipv4": "192.203.230.10",
+    "ipv6": "2001:500:a8::e",
+    "locations": 2,
+    "notes": "Operated by NASA Ames; one of the original government-operated root servers"
+  },
+  {
+    "letter": "f",
+    "hostname": "f.root-servers.net",
+    "operator": "Internet Systems Consortium, Inc. (ISC)",
+    "ipv4": "192.5.5.241",
+    "ipv6": "2001:500:2f::f",
+    "locations": 50,
+    "notes": "Operated by ISC, creators of BIND; one of the most widely distributed root servers via anycast"
+  },
+  {
+    "letter": "g",
+    "hostname": "g.root-servers.net",
+    "operator": "Defense Information Systems Agency (DISA)",
+    "ipv4": "192.112.36.4",
+    "ipv6": "2001:500:12::d0d",
+    "locations": 6,
+    "notes": "Operated by DISA; one of the US government-operated root name servers"
+  },
+  {
+    "letter": "h",
+    "hostname": "h.root-servers.net",
+    "operator": "US Army Research Laboratory (ARL)",
+    "ipv4": "198.97.190.53",
+    "ipv6": "2001:500:1::53",
+    "locations": 2,
+    "notes": "Operated by the US Army Research Laboratory; a military-academic root server"
+  },
+  {
+    "letter": "i",
+    "hostname": "i.root-servers.net",
+    "operator": "Netnod Internet Exchange i Sverige AB",
+    "ipv4": "192.36.148.17",
+    "ipv6": "2001:7fe::53",
+    "locations": 55,
+    "notes": "Operated by Netnod (Sweden); one of the most geographically distributed root servers"
+  },
+  {
+    "letter": "j",
+    "hostname": "j.root-servers.net",
+    "operator": "Verisign, Inc.",
+    "ipv4": "192.58.128.30",
+    "ipv6": "2001:503:c27::2:30",
+    "locations": 100,
+    "notes": "Second root server operated by Verisign; one of the largest anycast deployments among root servers"
+  },
+  {
+    "letter": "k",
+    "hostname": "k.root-servers.net",
+    "operator": "RIPE NCC (Reseaux IP Europeens Network Coordination Centre)",
+    "ipv4": "193.0.14.129",
+    "ipv6": "2001:7fd::1",
+    "locations": 80,
+    "notes": "Operated by RIPE NCC; serves Europe, Middle East, and Central Asia primarily"
+  },
+  {
+    "letter": "l",
+    "hostname": "l.root-servers.net",
+    "operator": "ICANN",
+    "ipv4": "199.7.83.42",
+    "ipv6": "2001:500:9f::42",
+    "locations": 180,
+    "notes": "Operated by ICANN; one of the most widely distributed root servers globally"
+  },
+  {
+    "letter": "m",
+    "hostname": "m.root-servers.net",
+    "operator": "WIDE Project",
+    "ipv4": "202.12.27.33",
+    "ipv6": "2001:dc3::35",
+    "locations": 7,
+    "notes": "Operated by the WIDE Project in Japan; the only root server primarily operated from Asia"
+  }
+]

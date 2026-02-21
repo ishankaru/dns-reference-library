@@ -1,0 +1,352 @@
+[
+  {
+    "tld": "com",
+    "type": "gTLD",
+    "registry": "Verisign",
+    "introduced": 1985,
+    "description": "Commercial entities; the most widely used TLD globally with over 160 million registered domains"
+  },
+  {
+    "tld": "net",
+    "type": "gTLD",
+    "registry": "Verisign",
+    "introduced": 1985,
+    "description": "Originally for network infrastructure providers; now used broadly by commercial and personal sites"
+  },
+  {
+    "tld": "org",
+    "type": "gTLD",
+    "registry": "Public Interest Registry (PIR)",
+    "introduced": 1985,
+    "description": "Non-profit organisations and open-source projects; unrestricted registration since 1996"
+  },
+  {
+    "tld": "info",
+    "type": "gTLD",
+    "registry": "Afilias (now Identity Digital)",
+    "introduced": 2001,
+    "description": "Informational websites; one of the first new gTLDs delegated by ICANN in 2001"
+  },
+  {
+    "tld": "biz",
+    "type": "gTLD",
+    "registry": "Identity Digital",
+    "introduced": 2001,
+    "description": "Business use; intended as an alternative to .com for commercial registrations"
+  },
+  {
+    "tld": "name",
+    "type": "gTLD",
+    "registry": "Verisign",
+    "introduced": 2001,
+    "description": "Personal names and individuals; supports third-level registrations (firstname.lastname.name)"
+  },
+  {
+    "tld": "pro",
+    "type": "gTLD",
+    "registry": "Identity Digital",
+    "introduced": 2004,
+    "description": "Credentialed professionals; originally restricted to verified doctors, lawyers and accountants"
+  },
+  {
+    "tld": "xyz",
+    "type": "gTLD",
+    "registry": "XYZ.COM LLC",
+    "introduced": 2014,
+    "description": "General purpose; one of the most registered new gTLDs, popular with tech startups and developers"
+  },
+  {
+    "tld": "online",
+    "type": "gTLD",
+    "registry": "Radix",
+    "introduced": 2015,
+    "description": "General purpose for online presence; one of the higher-volume new gTLDs"
+  },
+  {
+    "tld": "site",
+    "type": "gTLD",
+    "registry": "Radix",
+    "introduced": 2015,
+    "description": "General purpose website identifier; unrestricted and broadly marketed"
+  },
+  {
+    "tld": "top",
+    "type": "gTLD",
+    "registry": "Jiangsu Bangning Science and Technology Co.",
+    "introduced": 2014,
+    "description": "General purpose; large registered domain count driven primarily by Chinese market registrations"
+  },
+  {
+    "tld": "club",
+    "type": "gTLD",
+    "registry": ".Club Domains LLC",
+    "introduced": 2014,
+    "description": "Communities, membership organisations, and clubs"
+  },
+  {
+    "tld": "app",
+    "type": "gTLD",
+    "registry": "Google LLC",
+    "introduced": 2018,
+    "description": "Mobile and web applications; HSTS preloaded, requiring HTTPS for all registrations"
+  },
+  {
+    "tld": "dev",
+    "type": "gTLD",
+    "registry": "Google LLC",
+    "introduced": 2019,
+    "description": "Developers and software projects; HSTS preloaded, requiring HTTPS for all registrations"
+  },
+  {
+    "tld": "io",
+    "type": "ccTLD",
+    "registry": "Internet Computer Bureau (on behalf of BIOT)",
+    "introduced": 1997,
+    "description": "Country code for British Indian Ocean Territory; widely adopted by technology companies due to the 'input/output' association"
+  },
+  {
+    "tld": "uk",
+    "type": "ccTLD",
+    "registry": "Nominet UK",
+    "introduced": 1985,
+    "description": "United Kingdom; second-level domains include .co.uk, .org.uk, .me.uk; direct .uk registrations available since 2014"
+  },
+  {
+    "tld": "de",
+    "type": "ccTLD",
+    "registry": "DENIC eG",
+    "introduced": 1986,
+    "description": "Germany; the largest ccTLD by registration volume with over 17 million domains"
+  },
+  {
+    "tld": "fr",
+    "type": "ccTLD",
+    "registry": "AFNIC",
+    "introduced": 1986,
+    "description": "France; restricted to registrants with a presence in France or the European Economic Area"
+  },
+  {
+    "tld": "jp",
+    "type": "ccTLD",
+    "registry": "Japan Registry Services (JPRS)",
+    "introduced": 1986,
+    "description": "Japan; supports both ASCII and Japanese-script domain names (IDN)"
+  },
+  {
+    "tld": "cn",
+    "type": "ccTLD",
+    "registry": "China Internet Network Information Center (CNNIC)",
+    "introduced": 1990,
+    "description": "China; one of the largest ccTLDs by volume; registrants must comply with Chinese content regulations"
+  },
+  {
+    "tld": "au",
+    "type": "ccTLD",
+    "registry": "auDA (au Domain Administration)",
+    "introduced": 1986,
+    "description": "Australia; direct .au registrations launched in 2022 alongside legacy .com.au and .net.au"
+  },
+  {
+    "tld": "ca",
+    "type": "ccTLD",
+    "registry": "Canadian Internet Registration Authority (CIRA)",
+    "introduced": 1987,
+    "description": "Canada; restricted to Canadian Presence Requirements (CPR), requiring registrants to have a Canadian connection"
+  },
+  {
+    "tld": "br",
+    "type": "ccTLD",
+    "registry": "Registro.br (NIC.br)",
+    "introduced": 1989,
+    "description": "Brazil; all registrations are at the third level (e.g., .com.br, .org.br); second-level registrations not available"
+  },
+  {
+    "tld": "in",
+    "type": "ccTLD",
+    "registry": "National Internet Exchange of India (NIXI)",
+    "introduced": 1989,
+    "description": "India; unrestricted registration; also supports IDN variants in multiple Indian scripts"
+  },
+  {
+    "tld": "ru",
+    "type": "ccTLD",
+    "registry": "Coordination Center for TLD RU (CC for TLD RU)",
+    "introduced": 1994,
+    "description": "Russia; one of the most registered ccTLDs; the Cyrillic .rf (.xn--p1ai) TLD also serves Russian-language registrants"
+  },
+  {
+    "tld": "nl",
+    "type": "ccTLD",
+    "registry": "SIDN (Stichting Internet Domainregistratie Nederland)",
+    "introduced": 1986,
+    "description": "Netherlands; one of Europe's oldest and largest ccTLDs by registration volume"
+  },
+  {
+    "tld": "it",
+    "type": "ccTLD",
+    "registry": "IIT-CNR (Institute of Informatics and Telematics)",
+    "introduced": 1987,
+    "description": "Italy; restricted to registrants with an EU presence; registrar must be accredited by the registry"
+  },
+  {
+    "tld": "es",
+    "type": "ccTLD",
+    "registry": "Red.es",
+    "introduced": 1988,
+    "description": "Spain; restricted to registrants with a Spanish or EU connection; also administered under .gob.es for government entities"
+  },
+  {
+    "tld": "kr",
+    "type": "ccTLD",
+    "registry": "Korea Internet and Security Agency (KISA)",
+    "introduced": 1986,
+    "description": "South Korea; supports Hangul IDN registrations under the .한국 TLD"
+  },
+  {
+    "tld": "za",
+    "type": "ccTLD",
+    "registry": "ZADNA / UniForum SA",
+    "introduced": 1990,
+    "description": "South Africa; most registrations at the third level under .co.za, .org.za, .net.za"
+  },
+  {
+    "tld": "blog",
+    "type": "new gTLD",
+    "registry": "Knock Knock WHOIS There LLC (Automattic)",
+    "introduced": 2017,
+    "description": "Blogging platforms and personal publishing; operated by Automattic, the company behind WordPress.com"
+  },
+  {
+    "tld": "shop",
+    "type": "new gTLD",
+    "registry": "GMO Registry Inc.",
+    "introduced": 2016,
+    "description": "E-commerce and retail; one of the highest-volume new gTLDs in active use"
+  },
+  {
+    "tld": "tech",
+    "type": "new gTLD",
+    "registry": "Radix",
+    "introduced": 2015,
+    "description": "Technology companies, products, and communities"
+  },
+  {
+    "tld": "cloud",
+    "type": "new gTLD",
+    "registry": "ARUBA PEC S.p.A.",
+    "introduced": 2016,
+    "description": "Cloud computing services and infrastructure providers"
+  },
+  {
+    "tld": "ai",
+    "type": "ccTLD",
+    "registry": "Government of Anguilla",
+    "introduced": 1995,
+    "description": "Country code for Anguilla; widely adopted by artificial intelligence companies and research institutions due to the 'AI' association"
+  },
+  {
+    "tld": "crypto",
+    "type": "new gTLD",
+    "registry": "Unstoppable Domains (not ICANN-delegated); ICM Registry for ICANN application (withdrawn)",
+    "introduced": null,
+    "description": "Cryptocurrency and blockchain communities; note that .crypto is primarily a blockchain-native TLD on the Unstoppable Domains system and is NOT resolvable via standard ICANN DNS"
+  },
+  {
+    "tld": "edu",
+    "type": "sTLD",
+    "registry": "EDUCAUSE",
+    "introduced": 1985,
+    "description": "Accredited post-secondary educational institutions in the United States; restricted by EDUCAUSE eligibility requirements"
+  },
+  {
+    "tld": "gov",
+    "type": "sTLD",
+    "registry": "Cybersecurity and Infrastructure Security Agency (CISA), US DHS",
+    "introduced": 1985,
+    "description": "US federal, state, local, and tribal government entities; restricted to verified US government bodies"
+  },
+  {
+    "tld": "mil",
+    "type": "sTLD",
+    "registry": "US Department of Defense (DoD) Network Information Center",
+    "introduced": 1985,
+    "description": "United States military; restricted to DoD and affiliated entities; not open for public registration"
+  },
+  {
+    "tld": "museum",
+    "type": "sTLD",
+    "registry": "Museum Domain Management Association (MuseDoma)",
+    "introduced": 2001,
+    "description": "Accredited museums worldwide; the first sponsored TLD approved by ICANN; eligibility verified by MuseDoma"
+  },
+  {
+    "tld": "aero",
+    "type": "sTLD",
+    "registry": "SITA (Societe Internationale de Telecommunications Aeronautiques)",
+    "introduced": 2001,
+    "description": "Aviation industry members including airlines, airports, and air traffic control; restricted to SITA-approved entities"
+  },
+  {
+    "tld": "coop",
+    "type": "sTLD",
+    "registry": "DotCooperation LLC (on behalf of ICA)",
+    "introduced": 2002,
+    "description": "Cooperative organisations as defined by the International Co-operative Alliance; restricted to genuine co-ops"
+  },
+  {
+    "tld": "arpa",
+    "type": "infrastructure",
+    "registry": "Internet Architecture Board (IAB) / IANA",
+    "introduced": 1985,
+    "description": "Infrastructure TLD used exclusively for technical DNS purposes; hosts in-addr.arpa (IPv4 reverse DNS), ip6.arpa (IPv6 reverse DNS), and e164.arpa (ENUM); never used for public registrations"
+  },
+  {
+    "tld": "int",
+    "type": "sTLD",
+    "registry": "IANA",
+    "introduced": 1988,
+    "description": "International treaty organisations and intergovernmental bodies; strictly restricted to organisations established by international treaties (e.g., nato.int, who.int)"
+  },
+  {
+    "tld": "mobi",
+    "type": "gTLD",
+    "registry": "Identity Digital",
+    "introduced": 2006,
+    "description": "Mobile-optimised websites; originally required sites to meet mobile usability standards; restrictions relaxed in subsequent years"
+  },
+  {
+    "tld": "tel",
+    "type": "gTLD",
+    "registry": "Telnames Ltd",
+    "introduced": 2009,
+    "description": "Contact information storage using NAPTR records in the DNS; designed to serve as a public directory of telephone and contact data"
+  },
+  {
+    "tld": "travel",
+    "type": "sTLD",
+    "registry": "Tralliance Registry Management Company LLC",
+    "introduced": 2005,
+    "description": "Travel and tourism industry; restricted to verified members of the travel trade"
+  },
+  {
+    "tld": "jobs",
+    "type": "sTLD",
+    "registry": "Employ Media LLC",
+    "introduced": 2005,
+    "description": "Human resources and employment-related content; restricted to genuine employment-related registrants"
+  },
+  {
+    "tld": "cat",
+    "type": "sTLD",
+    "registry": "Fundacio puntCAT",
+    "introduced": 2006,
+    "description": "Catalan linguistic and cultural community; the first TLD delegated based on a language/culture rather than a geography or commercial category"
+  },
+  {
+    "tld": "post",
+    "type": "sTLD",
+    "registry": "Universal Postal Union (UPU)",
+    "introduced": 2012,
+    "description": "Universal Postal Union and national postal operators worldwide; restricted to UPU member organisations"
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "port": 53,
+    "protocol": "UDP/TCP",
+    "service": "DNS",
+    "description": "Standard DNS queries and responses. UDP is used for queries up to 512 bytes (extended to 4096+ bytes with EDNS0); TCP is used for responses exceeding the negotiated UDP payload size and for zone transfers (AXFR/IXFR).",
+    "rfc": "RFC 1035",
+    "status": "assigned",
+    "notes": "The foundational DNS port. RFC 7766 mandates that DNS servers MUST support TCP on port 53. DNS over TCP became more important after widespread DNSSEC deployment increased response sizes."
+  },
+  {
+    "port": 853,
+    "protocol": "TCP",
+    "service": "DNS over TLS (DoT)",
+    "description": "Encrypted DNS using TLS. The client establishes a TLS connection to the resolver on port 853 before sending DNS messages framed using the standard 2-byte length prefix defined in RFC 1035 Section 4.2.2.",
+    "rfc": "RFC 7858",
+    "status": "assigned",
+    "notes": "DoT provides transport-layer encryption and authentication of the resolver. Authenticates the server via PKIX certificates (SPKI pins or CA-signed). Supported by Cloudflare (1.1.1.1), Google (8.8.8.8), and Quad9 (9.9.9.9)."
+  },
+  {
+    "port": 443,
+    "protocol": "TCP",
+    "service": "DNS over HTTPS (DoH)",
+    "description": "Encrypted DNS transported inside HTTPS. Clients send DNS wire-format messages (application/dns-message) via HTTP POST or HTTP GET with a base64url-encoded 'dns' query parameter. Traffic is indistinguishable from regular HTTPS.",
+    "rfc": "RFC 8484",
+    "status": "assigned (shared with HTTPS)",
+    "notes": "DoH is designed to circumvent middlebox inspection and censorship by blending DNS traffic with HTTPS. Supported natively by Firefox (using Cloudflare by default), Chrome, and major resolvers. The shared port 443 makes blocking difficult without collateral damage."
+  },
+  {
+    "port": 784,
+    "protocol": "UDP",
+    "service": "DNS over QUIC (DoQ)",
+    "description": "Encrypted DNS transported over QUIC, a UDP-based multiplexed transport. Each DNS query is carried in an independent QUIC stream, eliminating head-of-line blocking present in TLS/TCP-based DNS. Initially assigned port 784 (experimental); standardised on port 8853.",
+    "rfc": "RFC 9250",
+    "status": "experimental / superseded by 8853",
+    "notes": "The IANA-assigned port for DoQ production deployments is 8853. Port 784 was used during early drafts and experimental implementations. QUIC's 0-RTT handshake offers lower latency than DoT for subsequent connections."
+  },
+  {
+    "port": 8853,
+    "protocol": "UDP/TCP",
+    "service": "DNS over QUIC (DoQ) — standard port",
+    "description": "The IANA-assigned production port for DNS over QUIC (RFC 9250). Clients open a QUIC connection to this port and send DNS messages as individual QUIC stream data, with each query on its own stream.",
+    "rfc": "RFC 9250",
+    "status": "assigned",
+    "notes": "Assigned in 2022 alongside RFC 9250. Supported by AdGuard DNS and some experimental BIND/Knot builds. Port 784 is the legacy experimental port for DoQ."
+  },
+  {
+    "port": 5353,
+    "protocol": "UDP",
+    "service": "Multicast DNS (mDNS)",
+    "description": "Zero-configuration DNS for local network service discovery. Hosts join the multicast group 224.0.0.251 (IPv4) or FF02::FB (IPv6) and send DNS queries and responses without a central DNS server. Used by Apple Bonjour, Avahi, and DNS-SD.",
+    "rfc": "RFC 6762",
+    "status": "assigned",
+    "notes": "mDNS operates only on the local link and does not traverse routers. The .local pseudo-TLD is reserved exclusively for mDNS. Commonly used by printers, Apple devices, Chromecast, and IoT devices for service advertisement."
+  },
+  {
+    "port": 953,
+    "protocol": "TCP",
+    "service": "RNDC (Remote Name Daemon Control)",
+    "description": "The ISC BIND name server control channel. The rndc command-line tool connects to this port on the name server to send authenticated management commands: reloading zones, flushing caches, stopping the server, and querying server statistics.",
+    "rfc": "N/A (ISC-defined protocol)",
+    "status": "assigned",
+    "notes": "Authentication uses HMAC-MD5 or HMAC-SHA keys defined in both rndc.conf and named.conf. Not standardised via IETF; specific to ISC BIND. Should be firewalled to administrative hosts only. Knot DNS uses a separate control socket mechanism."
+  },
+  {
+    "port": 8053,
+    "protocol": "UDP/TCP",
+    "service": "Alternate DNS / DNS management interfaces",
+    "description": "Unofficial alternate port for DNS services. Commonly used by split-horizon DNS configurations, DNS proxies, debugging instances, and software that cannot bind to the privileged port 53. Also used by some DNS management and statistics APIs.",
+    "rfc": "N/A (no IANA assignment)",
+    "status": "unofficial / common convention",
+    "notes": "Not assigned by IANA. Used by PowerDNS recursor API (port 8082 by default, but 8053 is a common alternative), local DNS stub resolvers in containers, and development/testing environments."
+  }
+]

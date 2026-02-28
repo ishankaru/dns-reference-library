@@ -148,7 +148,7 @@ False positives occur when legitimate senders are blocked due to DNSBL listing. 
 **PBL mismatches:** IPs miscategorized as dynamic/residential that are actually used for mail server hosting.
 
 **Remediation steps for senders:**
-1. Identify which DNSBL has listed the IP using multi-DNSBL lookup tools (MXToolbox, Debouncer). You can also use an [IP geolocation lookup](https://dnschkr.com/ip-location) to check the IP's ASN and hosting context
+1. Identify which DNSBL has listed the IP using multi-DNSBL lookup tools (MXToolbox, Debouncer). You can also use an [IP geolocation lookup](https://dnschkr.com/ip-address-lookup) to check the IP's ASN and hosting context
 2. Understand the listing reason from the DNSBL's lookup page
 3. Remediate the underlying cause (remove malware, close open relay, stop spam)
 4. Submit delisting request via the DNSBL's removal process

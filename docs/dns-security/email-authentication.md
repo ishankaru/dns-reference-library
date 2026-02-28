@@ -222,7 +222,7 @@ Gmail, Yahoo Mail, Fastmail, Apple Mail (partial), and several other clients sup
 | DMARC | Alignment + policy | From header domain | Depends on ARC |
 | BIMI | Logo display | From header domain | N/A |
 
-A properly deployed email authentication stack requires all three (SPF, DKIM, DMARC) to be effective. DMARC without DKIM relies on SPF, which breaks on forwarding. DKIM without DMARC provides integrity but no policy enforcement. After configuring these records, use a [DNS propagation checker](https://dnschkr.com/propagation-checker) to verify they are visible from resolvers worldwide before relying on them for enforcement.
+A properly deployed email authentication stack requires all three (SPF, DKIM, DMARC) to be effective. DMARC without DKIM relies on SPF, which breaks on forwarding. DKIM without DMARC provides integrity but no policy enforcement. After configuring these records, use a [DNS propagation checker](https://dnschkr.com/dns-propagation-checker) to verify they are visible from resolvers worldwide before relying on them for enforcement.
 
 ---
 

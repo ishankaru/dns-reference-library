@@ -125,7 +125,7 @@ Sending MTAs cache MX lookups for the TTL duration. If you migrate mail provider
 
 **Email not delivered; sender receives "no MX record" bounce.** [Look up MX records](https://dnschkr.com/dns-inspector) for the domain to confirm what is published. If no MX record exists and the A record is not intended as a mail host, publish either a valid MX or a null MX.
 
-**Mail delivered to old provider after MX change.** The sending MTA has cached the old MX record. The cache expires at the previous TTL. Verify the new MX at the authoritative server: `dig @ns1.example.com MX example.com`. If correct there, propagation is in progress — use a [global DNS propagation checker](https://dnschkr.com/propagation-checker) to see which resolvers have picked up the new MX. Wait for the old TTL to expire.
+**Mail delivered to old provider after MX change.** The sending MTA has cached the old MX record. The cache expires at the previous TTL. Verify the new MX at the authoritative server: `dig @ns1.example.com MX example.com`. If correct there, propagation is in progress — use a [global DNS propagation checker](https://dnschkr.com/dns-propagation-checker) to see which resolvers have picked up the new MX. Wait for the old TTL to expire.
 
 **MX points to CNAME; intermittent delivery failures.** Replace the CNAME target with the actual hostname. Add an A record for that hostname directly in the zone.
 

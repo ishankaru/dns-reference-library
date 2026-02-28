@@ -81,7 +81,7 @@ Use the same TTL for A and AAAA records pointing to the same host. Mismatched TT
 
 **IPv6-only attack surface.** Publishing AAAA records exposes an IPv6 interface on the host. Ensure firewall rules cover IPv6 as well as IPv4. Many operators configure IPv4 firewalls thoroughly but leave IPv6 open by default. `ip6tables` or equivalent must be configured explicitly.
 
-**Prefix length exposure.** IPv6 AAAA records often reveal the host's /64 prefix, from which the interface identifier (EUI-64 or random) may be derived. This can enable scanning of adjacent addresses in the same subnet. Use privacy extensions (RFC 4941) or randomly assigned addresses where applicable. An [IP geolocation lookup](https://dnschkr.com/ip-location) can reveal additional metadata about exposed IPv6 addresses, including ASN and approximate location.
+**Prefix length exposure.** IPv6 AAAA records often reveal the host's /64 prefix, from which the interface identifier (EUI-64 or random) may be derived. This can enable scanning of adjacent addresses in the same subnet. Use privacy extensions (RFC 4941) or randomly assigned addresses where applicable. An [IP geolocation lookup](https://dnschkr.com/ip-address-lookup) can reveal additional metadata about exposed IPv6 addresses, including ASN and approximate location.
 
 **DNSSEC applies equally.** AAAA records must be signed if DNSSEC is enabled on the zone. A signed A record with an unsigned AAAA (or vice versa) is a zone configuration error.
 

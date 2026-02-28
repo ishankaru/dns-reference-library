@@ -108,7 +108,7 @@ SRV-aware clients follow this lookup and selection algorithm (RFC 2782 §3):
 | Frequent endpoint changes | 60–300 seconds |
 | Service migration (pre-change) | Lower to 300 seconds 48h before |
 
-SRV records for stable infrastructure (e.g., corporate LDAP servers) can use high TTLs. For services with dynamic backends or planned maintenance windows, lower TTLs ensure clients discover the change quickly. After updating SRV records, [check DNS propagation globally](https://dnschkr.com/propagation-checker) to confirm the new endpoints are visible across resolvers.
+SRV records for stable infrastructure (e.g., corporate LDAP servers) can use high TTLs. For services with dynamic backends or planned maintenance windows, lower TTLs ensure clients discover the change quickly. After updating SRV records, [check DNS propagation globally](https://dnschkr.com/dns-propagation-checker) to confirm the new endpoints are visible across resolvers.
 
 ## Security Considerations
 

@@ -10,7 +10,7 @@ Clearing the local DNS cache forces the next query to go to the recursive resolv
 - Diagnosing whether a DNS issue is local (cache) or global (resolver/authoritative). See the [guide to DNS TTL](https://dnschkr.com/blog/what-is-dns-ttl) for how caching durations are determined.
 - Recovering from a corrupted or stale cache entry.
 
-Clearing a local cache only affects queries made from that machine. It does not affect ISP resolvers, public resolvers, or other machines. After flushing your local cache, you can use the [DNS propagation checker](https://dnschkr.com/propagation-checker) to see whether resolvers worldwide are also returning the updated record.
+Clearing a local cache only affects queries made from that machine. It does not affect ISP resolvers, public resolvers, or other machines. After flushing your local cache, you can use the [DNS propagation checker](https://dnschkr.com/dns-propagation-checker) to see whether resolvers worldwide are also returning the updated record.
 
 ## Windows
 

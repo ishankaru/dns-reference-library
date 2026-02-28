@@ -131,7 +131,7 @@ SPF, DKIM, and DMARC records change infrequently. Higher TTLs reduce resolver qu
 
 **DMARC reports not arriving.** Check that the `rua` address is reachable and that the receiving domain has an external reporting authorization record if the report address is on a different domain: `dig TXT <your-domain>.report-domain.example.com` should return `v=DMARC1`.
 
-**Domain verification token not detected.** The verification service queries the TXT record. Confirm it is published at the correct name (usually the zone apex or a specific subdomain specified by the service). Verify with `dig TXT <domain>` directly against the authoritative server, or use a [DNS propagation checker](https://dnschkr.com/propagation-checker) to confirm the TXT record is visible from multiple locations before retrying verification.
+**Domain verification token not detected.** The verification service queries the TXT record. Confirm it is published at the correct name (usually the zone apex or a specific subdomain specified by the service). Verify with `dig TXT <domain>` directly against the authoritative server, or use a [DNS propagation checker](https://dnschkr.com/dns-propagation-checker) to confirm the TXT record is visible from multiple locations before retrying verification.
 
 **Large DKIM key not resolving over UDP.** Test with `dig +tcp TXT <selector>._domainkey.<domain>`. If this works but UDP does not, the response exceeds 512 bytes and EDNS is not negotiated. Check firewalls for DNS UDP packet size restrictions; enable EDNS at the resolver.
 

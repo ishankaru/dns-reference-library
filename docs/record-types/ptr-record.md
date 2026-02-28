@@ -9,7 +9,7 @@ PTR records serve several practical purposes:
 - **Email deliverability** — Mail servers check that the sending IP has a valid PTR record, and that the PTR hostname resolves back to the same IP (Forward-Confirmed Reverse DNS, FCrDNS)
 - **Network diagnostics** — `traceroute`, `ping`, and SNMP tools use PTR records to display hostnames in output
 - **Log analysis** — System logs are more readable when IPs resolve to meaningful hostnames
-- **Abuse investigation** — PTR records identify the operator of an IP address; an [IP location lookup](https://dnschkr.com/ip-location) can provide additional context like ASN, organization, and geolocation
+- **Abuse investigation** — PTR records identify the operator of an IP address; an [IP location lookup](https://dnschkr.com/ip-address-lookup) can provide additional context like ASN, organization, and geolocation
 
 PTR delegation is controlled by the IP address owner (the ISP or hosting provider), not the domain name owner. To set PTR records for an IP address, you must either control the reverse DNS zone for that block or request the change from the IP block owner.
 

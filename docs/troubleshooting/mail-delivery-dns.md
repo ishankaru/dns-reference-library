@@ -140,7 +140,7 @@ dig TXT google._domainkey.example.com
 # The DKIM-Signature header contains s=<selector>; d=<domain>
 ```
 
-**Key rotation not completed:** When rotating DKIM keys, the new public key must be published in DNS before the mail servers start signing with the new private key. If signing begins before the DNS record propagates, messages will fail DKIM verification. Use the [DNS propagation checker](https://dnschkr.com/propagation-checker) to confirm the new TXT record is visible globally before switching signing keys.
+**Key rotation not completed:** When rotating DKIM keys, the new public key must be published in DNS before the mail servers start signing with the new private key. If signing begins before the DNS record propagates, messages will fail DKIM verification. Use the [DNS propagation checker](https://dnschkr.com/dns-propagation-checker) to confirm the new TXT record is visible globally before switching signing keys.
 
 Safe key rotation procedure:
 1. Generate new key pair.

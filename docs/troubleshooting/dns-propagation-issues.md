@@ -133,7 +133,7 @@ dig A example.com @208.67.222.222   # OpenDNS
 ### Use Web-Based Propagation Checkers
 
 Tools that query resolvers in multiple geographic locations simultaneously:
-- [dnschkr DNS propagation checker](https://dnschkr.com/propagation-checker) — queries resolvers worldwide in real time
+- [dnschkr DNS propagation checker](https://dnschkr.com/dns-propagation-checker) — queries resolvers worldwide in real time
 - https://dnschecker.org/
 - https://www.whatsmydns.net/
 

@@ -76,4 +76,4 @@ Practical guidance for running DNS infrastructure correctly.
 
 This index covers the RFCs most relevant to day-to-day DNS work. For a complete list of all DNS-related RFCs, see the [IETF DNS-related RFCs page](https://www.rfc-editor.org/search/rfc_search_detail.php?title=dns) or the [DNSOP Working Group](https://datatracker.ietf.org/wg/dnsop/documents/) document list.
 
-For practical tools to test and verify the protocols described in these RFCs, try the [DNS record inspector](https://dnschkr.com/dns-inspector) and [DNS propagation checker](https://dnschkr.com/propagation-checker) at dnschkr.com.
+For practical tools to test and verify the protocols described in these RFCs, try the [DNS record inspector](https://dnschkr.com/dns-inspector) and [DNS propagation checker](https://dnschkr.com/dns-propagation-checker) at dnschkr.com.

@@ -131,7 +131,7 @@ dig A definitlynotreal12345.com @1.1.1.1
 
 NXDOMAIN hijacking breaks applications that rely on NXDOMAIN as a negative signal and can interfere with DNS-based software updates, search-as-you-type domain lookups, and split-horizon DNS configurations.
 
-To avoid hijacking: use a resolver that returns honest NXDOMAIN — Cloudflare 1.1.1.1, Google 8.8.8.8, and Quad9 9.9.9.9 do not hijack NXDOMAIN responses. You can also [check DNS propagation](https://dnschkr.com/propagation-checker) across multiple resolvers simultaneously to detect inconsistent responses that may indicate hijacking.
+To avoid hijacking: use a resolver that returns honest NXDOMAIN — Cloudflare 1.1.1.1, Google 8.8.8.8, and Quad9 9.9.9.9 do not hijack NXDOMAIN responses. You can also [check DNS propagation](https://dnschkr.com/dns-propagation-checker) across multiple resolvers simultaneously to detect inconsistent responses that may indicate hijacking.
 
 ## Debugging NXDOMAIN
 

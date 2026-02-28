@@ -135,7 +135,7 @@ CAA TTLs have limited operational impact compared to A or MX records because CAs
 
 **CAA records not found by the CA but present in DNS.** Some CAs have caching issues or query the wrong name. Verify the records are at the correct name: `dig CAA <exact-domain>`. Also check whether a CNAME is redirecting the CAA lookup to a different domain.
 
-**Let's Encrypt fails CAA check.** Let's Encrypt checks CAA from multiple vantage points (RFC 8555 multi-perspective issuance). If CAA records are inconsistently visible (e.g., only at one authoritative server due to zone propagation delay), the check may fail. Use a [DNS propagation tool](https://dnschkr.com/propagation-checker) to confirm the CAA record is visible globally before retrying issuance.
+**Let's Encrypt fails CAA check.** Let's Encrypt checks CAA from multiple vantage points (RFC 8555 multi-perspective issuance). If CAA records are inconsistently visible (e.g., only at one authoritative server due to zone propagation delay), the check may fail. Use a [DNS propagation tool](https://dnschkr.com/dns-propagation-checker) to confirm the CAA record is visible globally before retrying issuance.
 
 **Wildcard certificate refused.** If only an `issue` record is present (no `issuewild`), the CA may refuse wildcard issuance from some CAs (behavior varies by CA interpretation). Add an explicit `issuewild` record for the CA you intend to use for wildcards.
 

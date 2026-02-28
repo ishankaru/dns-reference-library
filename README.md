@@ -52,7 +52,7 @@ Files are plain Markdown. Read them on GitHub, clone locally, or integrate into 
 The reference material in this library pairs with hands-on DNS analysis tools:
 
 - [DNS Inspector](https://dnschkr.com/dns-inspector) — query all record types for any domain against authoritative nameservers
-- [DNS Propagation Checker](https://dnschkr.com/propagation-checker) — verify DNS changes across global resolvers in real time
+- [DNS Propagation Checker](https://dnschkr.com/dns-propagation-checker) — verify DNS changes across global resolvers in real time
 - [TLD Directory](https://dnschkr.com/tlds) — browse 1,500+ TLDs with zone analytics, provider data, and pricing
 - [IP Intelligence](https://dnschkr.com/whats-my-ip-address) — IP geolocation, ASN, and threat intelligence lookup
 

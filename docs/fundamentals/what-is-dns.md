@@ -131,4 +131,4 @@ This distribution provides:
 ## Tools
 
 - [DNS record checker](https://dnschkr.com/dns-inspector) — Query A, AAAA, MX, NS, CNAME, TXT, and SOA records for any domain
-- [Check DNS propagation worldwide](https://dnschkr.com/propagation-checker) — Verify record changes across global resolvers
+- [Check DNS propagation worldwide](https://dnschkr.com/dns-propagation-checker) — Verify record changes across global resolvers

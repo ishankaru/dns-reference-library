@@ -89,7 +89,7 @@ dig @ns1.example.com example.com A
 dig example.com A
 ```
 
-**Online propagation checkers:** Tools like the [DNS propagation checker](https://dnschkr.com/propagation-checker) query multiple resolvers across different global locations simultaneously and show what each sees. This provides a representative view of propagation status across geographic regions and resolver populations.
+**Online propagation checkers:** Tools like the [DNS propagation checker](https://dnschkr.com/dns-propagation-checker) query multiple resolvers across different global locations simultaneously and show what each sees. This provides a representative view of propagation status across geographic regions and resolver populations.
 
 **Authoritative query:** Querying the authoritative server directly tells you what the current authoritative answer is, independent of resolver caches. If the authoritative answer is correct but resolvers still show old data, the issue is cache expiry — not an authoritative zone problem.
 

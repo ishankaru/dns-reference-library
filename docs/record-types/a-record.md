@@ -107,7 +107,7 @@ Low TTLs increase query volume against authoritative nameservers. Very high TTLs
 
 **IPv6 clients getting A records.** Clients with both IPv4 and IPv6 connectivity use the Happy Eyeballs algorithm (RFC 8305) to race AAAA and A lookups. If AAAA is missing, clients fall back to A. Add AAAA records for dual-stack support.
 
-**Record not visible after publish.** TTL of old record has not expired at the querying resolver. Verify at the authoritative nameserver first: `dig @<authoritative-ns> A <hostname>`. If correct there, propagation is in progress. You can [check A records for any domain](https://dnschkr.com/dns-inspector) to verify the current address mapping, or use a [DNS propagation checker](https://dnschkr.com/propagation-checker) to monitor rollout across global resolvers.
+**Record not visible after publish.** TTL of old record has not expired at the querying resolver. Verify at the authoritative nameserver first: `dig @<authoritative-ns> A <hostname>`. If correct there, propagation is in progress. You can [check A records for any domain](https://dnschkr.com/dns-inspector) to verify the current address mapping, or use a [DNS propagation checker](https://dnschkr.com/dns-propagation-checker) to monitor rollout across global resolvers.
 
 ## Related Records
 

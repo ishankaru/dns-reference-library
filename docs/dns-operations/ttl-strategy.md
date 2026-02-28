@@ -79,7 +79,7 @@ Reducing TTL before a planned change is one of the most operationally important 
 1. **T minus 48 hours (or 2x the current TTL):** Lower the TTL to 300 seconds (5 minutes). This change itself takes up to the current TTL to propagate, so the lower value needs to be in place well before the change.
 2. **Wait for the TTL reduction to propagate.** Verify with `dig +short example.com A` from multiple locations — the TTL in the response should be approaching 300. You can also [inspect DNS records](https://dnschkr.com/dns-inspector) online to check the current TTL from various nameservers.
 3. **T minus 0:** Make the DNS change (update the A record, swap NS, etc.). The change propagates within 300 seconds (5 minutes) to resolvers that have expired their cache.
-4. **Verify propagation** using a [DNS propagation checker](https://dnschkr.com/propagation-checker) that queries resolvers across multiple continents.
+4. **Verify propagation** using a [DNS propagation checker](https://dnschkr.com/dns-propagation-checker) that queries resolvers across multiple continents.
 5. **After change is confirmed stable:** Raise TTL back to the operational default.
 
 ### Why the 2x buffer

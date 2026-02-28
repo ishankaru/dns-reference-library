@@ -187,5 +187,5 @@ Servers that do not support EDNS(0) may return FORMERR or silently drop queries 
 ## Tools
 
 - [DNS record checker](https://dnschkr.com/dns-inspector) — Query any record type against authoritative nameservers
-- [DNS propagation checker](https://dnschkr.com/propagation-checker) — Observe how cached records update across global resolvers in real time
+- [DNS propagation checker](https://dnschkr.com/dns-propagation-checker) — Observe how cached records update across global resolvers in real time
 - [dig command guide](https://dnschkr.com/blog/dig-command-guide) — Inspect the full DNS resolution chain from the command line
